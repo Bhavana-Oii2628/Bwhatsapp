@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake WhatsApp Chat Maker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #121212;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            width: 300px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .contact-list {
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .contact {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+        }
+        .contact img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .chat-container {
+            display: none;
+            background: #1e1e1e;
+        }
+        .chat-header {
+            display: flex;
+            align-items: center;
+            background: #075e54;
+            color: white;
+            padding: 10px;
+        }
+        .chat-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #2c2c2c;
+        }
+        .message {
+            max-width: 70%;
+            margin: 5px;
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .sent {
+            background: #056162;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .received {
+            background: #262d31;
+            align-self: flex-start;
+            text-align: left;
+        }
+        .input-area {
+            display: flex;
+            padding: 10px;
+            background: #1e1e1e;
+        }
+        .input-area input, .input-area select {
+            flex: 1;
+            padding: 8px;
+            margin-right: 5px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+        }
+        .input-area button {
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #075e54;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="contact-page">
+        <div class="contact-list">
+            <div class="contact" onclick="openChat('🤗Family✨', 'https://img.freepik.com/free-vector/group-family-member-characters_1308-46054.jpg')">
+                <img src="https://img.freepik.com/free-vector/group-family-member-characters_1308-46054.jpg" alt="🤗Family✨">
+                <span>🤗Family✨</span>
+            </div>
+            <div class="contact" onclick="openChat('🥰Bhavana', 'https://i.pinimg.com/736x/91/b0/fc/91b0fc4cd3950bcc008cc3ed088176d1.jpg')">
+                <img src="https://i.pinimg.com/736x/91/b0/fc/91b0fc4cd3950bcc008cc3ed088176d1.jpg" alt="🥰Bhavana">
+                <span>🥰Bhavana</span>
+            
+            </div>
+
+            <div class="contact" onclick="openChat('❤️Amu🖤','https://static.vecteezy.com/system/resources/previews/036/619/699/non_2x/ai-generated-couple-of-lovers-in-cartoon-style-on-transparent-background-png.png')">
+                <img src="https://static.vecteezy.com/system/resources/previews/036/619/699/non_2x/ai-generated-couple-of-lovers-in-cartoon-style-on-transparent-background-png.png" alt="❤️Amu🖤">
+                <span>❤️Amu🖤</span>
+            </div>
+            <div class="contact" onclick="openChat('🥰Vaishu✨','https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-long-hair-three-dimensional-3d-cute-girl-character-doll-toy-model-png-image_10132133.png')">
+                <img src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-long-hair-three-dimensional-3d-cute-girl-character-doll-toy-model-png-image_10132133.png" alt="🥰Vaishu✨">
+                <span>🥰Vaishu✨</span>
+            </div>
+            <div class="contact" onclick="openChat('🖤Maddy💙','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtaZnB--f9ckL65l1fDAjG-58i4yjQeva0AU2C7DFeC2S6LYaYXdohKE3569jajSOdw1A&usqp=CAU')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtaZnB--f9ckL65l1fDAjG-58i4yjQeva0AU2C7DFeC2S6LYaYXdohKE3569jajSOdw1A&usqp=CAU" alt="🖤Maddy💙">
+                <span>🖤Maddy💙</span>
+            </div>
+            <div class="contact" onclick="openChat('Yalu🖤','https://img.freepik.com/premium-photo/cute-girl-octane-render-with-flat-background_623919-6192.jpg')">
+                <img src="https://img.freepik.com/premium-photo/cute-girl-octane-render-with-flat-background_623919-6192.jpg" alt="Yalu🖤">
+                <span>Yalu🖤</span>
+            </div>
+            
+            <div class="contact" onclick="openChat('🖤Pooja maa😘','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLEc2vOQJV9r5VKUFntd_dMXGxfBCzdj6CXfsJTat3c_8Prt0iFkcb8rAOY80UQ6DfMb0&usqp=CAU')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLEc2vOQJV9r5VKUFntd_dMXGxfBCzdj6CXfsJTat3c_8Prt0iFkcb8rAOY80UQ6DfMb0&usqp=CAU" alt="🖤Pooja maa😘">
+                <span>🖤Pooja maa😘</span>
+            </div>
+    
+            <div class="contact" onclick="openChat('Aishu💙','https://img.freepik.com/premium-photo/chicken-biryani-rise-up-chicken_544662-793.jpg')">
+                <img src="https://img.freepik.com/premium-photo/chicken-biryani-rise-up-chicken_544662-793.jpg" alt="Aishu💙">
+                <span>Aishu💙</span>
+            </div>
+            <div class="contact" onclick="openChat('Maya😛','https://img.freepik.com/premium-vector/bubu-loves-dudu_1181152-10.jpg')">
+                <img src="https://img.freepik.com/premium-vector/bubu-loves-dudu_1181152-10.jpg" alt="Maya😛">
+                <span>Maya😛</span>
+            </div>
+            <div class="contact" onclick="openChat('✨Amma💓','https://thumbs.dreamstime.com/b/happy-family-smiling-faces-surrounded-flowers-hearts-bright-yellow-background-happy-family-smiling-faces-357274024.jpg')">
+                <img src="https://thumbs.dreamstime.com/b/happy-family-smiling-faces-surrounded-flowers-hearts-bright-yellow-background-happy-family-smiling-faces-357274024.jpg" alt="✨Amma💓">
+                <span>✨Amma💓</span>
+            </div>
+        </div>
+    </div>
+    <div class="chat-container" id="chat-page">
+        <div class="chat-header">
+            <img id="profile-pic" src="default.png" alt="Profile Pic">
+            <span id="chat-name">Contact Name</span>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="message" placeholder="Type a message...">
+            <button onclick="addMessage()">Send</button>
+        </div>
+        <button onclick="downloadChat()">Download Chat</button>
+    </div>
+    <script>
+        function openChat(name, imgSrc) {
+            document.getElementById("contact-page").style.display = "none";
+            document.getElementById("chat-page").style.display = "block";
+            document.getElementById("chat-name").textContent = name;
+            document.getElementById("profile-pic").src = imgSrc;
+        }
+        function addMessage() {
+            let chatBox = document.getElementById("chat-box");
+            let messageInput = document.getElementById("message");
+            if (messageInput.value.trim() === "") return;
+            let messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", "sent");
+            messageDiv.textContent = messageInput.value;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            messageInput.value = "";
+        }
+        function downloadChat() {
+            let chatBox = document.getElementById("chat-box").innerText;
+            let blob = new Blob([chatBox], { type: "text/plain" });
+            let a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "chat.txt";
+            a.click();
+        }
+    </script>
+</body>
+</html>

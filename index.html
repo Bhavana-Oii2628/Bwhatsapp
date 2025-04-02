@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake WhatsApp - Welcome</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #121212; /* Dark mode background */
+            margin: 0;
+            flex-direction: column;
+            color: white; /* Light text for contrast */
+            font-family: Arial, sans-serif;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #25D366; /* WhatsApp green */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            width: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .meta {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #bbb; /* Light grey text */
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "main.html";
+        }, 3000); // 3 seconds delay before redirecting
+    </script>
+</head>
+<body>
+    <div class="title">WhatsApp</div>
+    <img class="logo" src="https://static.vecteezy.com/system/resources/thumbnails/018/930/564/small/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt="">
+    <div class="meta">from <b style="color: #25D366;">Meta</b></div>
+</body>
+</html>
